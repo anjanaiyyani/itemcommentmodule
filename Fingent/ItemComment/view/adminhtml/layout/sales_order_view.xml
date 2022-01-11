@@ -1,0 +1,22 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_items">
+            <arguments>
+                <argument name="columns" xsi:type="array">
+                    <item name="test_column" xsi:type="string" translate="true">Item Comment</item>
+                </argument>
+            </arguments>
+            <referenceBlock name="default_order_items_renderer">
+                <arguments>
+                    <argument name="columns" xsi:type="array">
+                        <item name="test_column" xsi:type="string" translate="true">col-test</item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+
+            <block class="Magento\Sales\Block\Adminhtml\Items\Column\DefaultColumn"
+                   name="column_test_column"
+                   template="Fingent_ItemComment::itemComment.phtml" group="column" />
+        </referenceBlock>
+    </body>
+</page>
